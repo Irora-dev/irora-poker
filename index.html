@@ -677,6 +677,253 @@
             color: #c084fc;
         }
 
+        /* Quiz Section */
+        .quiz-section {
+            background: rgba(139, 92, 246, 0.05);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .quiz-subtitle {
+            color: rgba(255,255,255,0.5);
+            font-size: clamp(0.8rem, 2.5vw, 0.95rem);
+            margin-top: 5px;
+        }
+
+        .quiz-stats {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            background: rgba(0,0,0,0.3);
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 80px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 4px;
+        }
+
+        .stat-value {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #a855f7;
+        }
+
+        .stat-value.correct { color: #22c55e; }
+        .stat-value.wrong { color: #ef4444; }
+
+        .quiz-container {
+            background: rgba(0,0,0,0.3);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .quiz-category {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.2);
+            color: #c084fc;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+
+        .quiz-question {
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            color: #fff;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .quiz-option {
+            background: rgba(139, 92, 246, 0.1);
+            border: 2px solid rgba(139, 92, 246, 0.3);
+            border-radius: 10px;
+            padding: 15px 20px;
+            color: #fff;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: left;
+        }
+
+        .quiz-option:hover:not(.disabled) {
+            background: rgba(139, 92, 246, 0.2);
+            border-color: #a855f7;
+        }
+
+        .quiz-option.selected {
+            border-color: #a855f7;
+            background: rgba(139, 92, 246, 0.3);
+        }
+
+        .quiz-option.correct {
+            background: rgba(34, 197, 94, 0.2);
+            border-color: #22c55e;
+        }
+
+        .quiz-option.incorrect {
+            background: rgba(239, 68, 68, 0.2);
+            border-color: #ef4444;
+        }
+
+        .quiz-option.disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .quiz-option.show-correct {
+            background: rgba(34, 197, 94, 0.15);
+            border-color: rgba(34, 197, 94, 0.5);
+        }
+
+        .quiz-feedback {
+            display: none;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .quiz-feedback.show {
+            display: block;
+        }
+
+        .quiz-feedback.correct {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .quiz-feedback.incorrect {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .feedback-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .quiz-feedback.correct .feedback-title { color: #22c55e; }
+        .quiz-feedback.incorrect .feedback-title { color: #ef4444; }
+
+        .feedback-text {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+        }
+
+        .quiz-controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .quiz-btn {
+            background: linear-gradient(145deg, #7c3aed, #5b21b6);
+            border: none;
+            border-radius: 10px;
+            padding: 12px 30px;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .quiz-btn:hover {
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+        }
+
+        .quiz-btn.secondary {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .quiz-btn.secondary:hover {
+            background: rgba(139, 92, 246, 0.2);
+        }
+
+        .quiz-categories {
+            background: rgba(0,0,0,0.2);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .quiz-categories h3 {
+            color: #a855f7;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .category-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 20px;
+            padding: 8px 16px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover {
+            background: rgba(139, 92, 246, 0.2);
+            color: #fff;
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(145deg, #7c3aed, #5b21b6);
+            border-color: #a855f7;
+            color: #fff;
+        }
+
+        .quiz-tab {
+            background: linear-gradient(145deg, rgba(34, 197, 94, 0.2), rgba(34, 197, 94, 0.1)) !important;
+            border-color: rgba(34, 197, 94, 0.4) !important;
+        }
+
+        .quiz-tab:hover {
+            background: rgba(34, 197, 94, 0.3) !important;
+        }
+
         /* Mobile-specific adjustments */
         @media (max-width: 480px) {
             body {
@@ -819,6 +1066,7 @@
             <button class="tab-btn" onclick="showTab('rankings')">Hand Rankings</button>
             <button class="tab-btn" onclick="showTab('glossary')">Glossary</button>
             <button class="tab-btn" onclick="showTab('live')">Live Poker Tips</button>
+            <button class="tab-btn quiz-tab" onclick="showTab('quiz')">Quiz</button>
         </div>
 
         <!-- Positions & Ranges Tab -->
@@ -1507,6 +1755,65 @@
                 </div>
             </div>
         </div>
+
+        <!-- Quiz Tab -->
+        <div id="quiz" class="tab-content">
+            <div class="quiz-section">
+                <div class="quiz-header">
+                    <h2>Test Your Poker Knowledge</h2>
+                    <p class="quiz-subtitle">Answer questions to test your understanding. Get instant feedback and learn from mistakes.</p>
+                </div>
+
+                <div class="quiz-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Score</span>
+                        <span class="stat-value" id="quiz-score">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Correct</span>
+                        <span class="stat-value correct" id="quiz-correct">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Wrong</span>
+                        <span class="stat-value wrong" id="quiz-wrong">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Question</span>
+                        <span class="stat-value" id="quiz-progress">1</span>
+                    </div>
+                </div>
+
+                <div class="quiz-container">
+                    <div class="quiz-category" id="quiz-category">Position Strategy</div>
+                    <div class="quiz-question" id="quiz-question">Loading question...</div>
+
+                    <div class="quiz-options" id="quiz-options">
+                        <!-- Options will be inserted here -->
+                    </div>
+
+                    <div class="quiz-feedback" id="quiz-feedback">
+                        <!-- Feedback will appear here -->
+                    </div>
+
+                    <div class="quiz-controls">
+                        <button class="quiz-btn" id="next-btn" onclick="nextQuestion()" style="display: none;">Next Question</button>
+                        <button class="quiz-btn secondary" onclick="resetQuiz()">Reset Quiz</button>
+                    </div>
+                </div>
+
+                <div class="quiz-categories">
+                    <h3>Filter by Category</h3>
+                    <div class="category-filters">
+                        <button class="filter-btn active" onclick="setCategory('all')">All Questions</button>
+                        <button class="filter-btn" onclick="setCategory('positions')">Positions</button>
+                        <button class="filter-btn" onclick="setCategory('hands')">Hand Rankings</button>
+                        <button class="filter-btn" onclick="setCategory('strategy')">Strategy</button>
+                        <button class="filter-btn" onclick="setCategory('betting')">Betting</button>
+                        <button class="filter-btn" onclick="setCategory('live')">Live Poker</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -1650,6 +1957,332 @@
         // Initialize
         createRangeGrid();
         selectPosition('btn');
+
+        // Quiz System
+        const quizQuestions = [
+            // Position Questions
+            {
+                category: 'positions',
+                question: 'Which position acts LAST post-flop?',
+                options: ['Big Blind', 'Small Blind', 'Button', 'UTG'],
+                correct: 2,
+                explanation: 'The Button (BTN) always acts last post-flop, giving them the most information before making decisions. This positional advantage is why the button can play the widest range of hands.'
+            },
+            {
+                category: 'positions',
+                question: 'You are UTG (Under the Gun). How should you adjust your opening range?',
+                options: ['Open very wide - you act first!', 'Play tight - premium hands only', 'Limp with speculative hands', 'Open the same as the button'],
+                correct: 1,
+                explanation: 'UTG is the worst position pre-flop because you have 8 players left to act behind you. Play only premium hands (top 10-12%) like AA, KK, QQ, JJ, TT, AK, AQ. Any player behind could wake up with a strong hand.'
+            },
+            {
+                category: 'positions',
+                question: 'What percentage of hands should you typically open from the Button?',
+                options: ['10-15%', '20-25%', '40-50%', '70-80%'],
+                correct: 2,
+                explanation: 'From the button, you can profitably open 40-50% of hands because you only have the blinds left to act, and you will have position post-flop. This includes many suited hands, connectors, and weaker aces.'
+            },
+            {
+                category: 'positions',
+                question: 'The "Cutoff" position is:',
+                options: ['First to act pre-flop', 'One seat to the right of the button', 'The small blind', 'Two seats to the left of the button'],
+                correct: 1,
+                explanation: 'The Cutoff (CO) is directly to the right of the Button. It\'s the second-best position because if the button folds, you will have position on everyone post-flop. Open wide from here.'
+            },
+            {
+                category: 'positions',
+                question: 'Why is the Small Blind considered a difficult position?',
+                options: ['You have to post a bet', 'You act first post-flop but last pre-flop', 'You can\'t see your cards', 'You have to match the big blind'],
+                correct: 1,
+                explanation: 'The Small Blind is tricky because you act second-to-last pre-flop (seems good) but FIRST post-flop (very bad). You\'re out of position for all post-flop streets, making it hard to realize equity. This is why SB should often 3-bet or fold rather than call.'
+            },
+            // Hand Ranking Questions
+            {
+                category: 'hands',
+                question: 'Which hand beats a Full House?',
+                options: ['Flush', 'Straight', 'Four of a Kind', 'Three of a Kind'],
+                correct: 2,
+                explanation: 'Four of a Kind (Quads) beats a Full House. The hand rankings from highest to lowest are: Royal Flush > Straight Flush > Four of a Kind > Full House > Flush > Straight > Three of a Kind > Two Pair > One Pair > High Card.'
+            },
+            {
+                category: 'hands',
+                question: 'You have A♠K♠ and the board is Q♠J♠2♦7♠3♥. What do you have?',
+                options: ['Ace high', 'Flush', 'Straight', 'Two pair'],
+                correct: 1,
+                explanation: 'You have a Flush! Your A♠K♠ combined with Q♠J♠7♠ on the board gives you five spades. In fact, you have the nut (best possible) flush with the Ace-high.'
+            },
+            {
+                category: 'hands',
+                question: 'What is a "Set" vs "Trips"?',
+                options: ['Same thing, different names', 'Set = pocket pair + 1 board card, Trips = 1 hole card + 2 board cards', 'Set is better than trips', 'Trips = three of same suit'],
+                correct: 1,
+                explanation: 'A Set is when you have a pocket pair and hit one more on the board (e.g., you have 77 and board is 7-K-2). Trips is when you have one card matching a pair on the board (e.g., you have A7 and board is 7-7-K). Sets are more disguised and generally stronger.'
+            },
+            {
+                category: 'hands',
+                question: 'Which hand wins: A♠A♥ on a board of K♣K♦K♠7♥2♣, or K♥7♣ on the same board?',
+                options: ['AA wins with Aces full of Kings', 'K7 wins with Four Kings', 'K7 wins with Kings full of Sevens', 'It\'s a tie'],
+                correct: 2,
+                explanation: 'K7 wins with Kings full of Sevens (K-K-K-7-7). AA makes Aces full of Kings (A-A-K-K-K), but K7 makes a better full house using both hole cards. Always count carefully!'
+            },
+            {
+                category: 'hands',
+                question: 'You have 5♦6♦ on a board of 7♠8♣9♦. What is your hand?',
+                options: ['Straight', 'Flush draw', 'Two pair', 'Straight flush draw'],
+                correct: 0,
+                explanation: 'You have a Straight! 5-6-7-8-9. Your two hole cards connect with the board to make a nine-high straight. Note: If the 9 was a diamond, you\'d also have a straight flush draw.'
+            },
+            // Strategy Questions
+            {
+                category: 'strategy',
+                question: 'What is a "Continuation Bet" (C-Bet)?',
+                options: ['Betting when you flop a strong hand', 'Betting the flop after you raised pre-flop', 'Calling a bet to continue in the hand', 'Betting on every street'],
+                correct: 1,
+                explanation: 'A C-Bet is when you bet the flop after being the pre-flop raiser. It\'s called "continuation" because you\'re continuing your aggression. C-betting is profitable because you often win the pot immediately, and your range is perceived as strong.'
+            },
+            {
+                category: 'strategy',
+                question: 'You have AK and miss the flop completely. What is this called?',
+                options: ['A cooler', 'Air / No pair', 'A bad beat', 'A set mine'],
+                correct: 1,
+                explanation: 'When you have unpaired hole cards and don\'t connect with the board, you have "Air" or simply no pair. AK specifically missing is common (you only flop a pair about 1/3 of the time). You may still win by betting as a bluff.'
+            },
+            {
+                category: 'strategy',
+                question: 'What does "playing in position" mean?',
+                options: ['Sitting in a comfortable chair', 'Acting after your opponent', 'Being at a good table', 'Having a big stack'],
+                correct: 1,
+                explanation: 'Being "in position" means you act AFTER your opponent on each betting round. This is hugely advantageous because you get to see what they do before deciding. You can value bet thinner, bluff more effectively, and control pot size better.'
+            },
+            {
+                category: 'strategy',
+                question: 'When should you typically slowplay a strong hand?',
+                options: ['Always - trap your opponents!', 'Rarely - usually just bet for value', 'Never slowplay', 'Only on the river'],
+                correct: 1,
+                explanation: 'Slowplaying is generally overused by beginners. Usually you should bet your strong hands for value! Slowplay only when: 1) The board is very dry and unlikely to change, 2) Your opponent is aggressive and likely to bet for you, 3) You block their calling range.'
+            },
+            {
+                category: 'strategy',
+                question: 'What is "pot control"?',
+                options: ['Counting the pot size', 'Keeping the pot small with medium-strength hands', 'Winning every pot', 'Controlling who bets'],
+                correct: 1,
+                explanation: 'Pot control means deliberately keeping the pot small when you have a medium-strength hand that can\'t handle lots of action. For example, checking back top pair weak kicker on the turn to avoid bloating the pot and facing a tough river decision.'
+            },
+            // Betting Questions
+            {
+                category: 'betting',
+                question: 'What is a standard pre-flop open raise size?',
+                options: ['1x the big blind', '2.5-3x the big blind', '5x the big blind', '10x the big blind'],
+                correct: 1,
+                explanation: '2.5-3x the big blind is standard online. In live games, 4-5x is often used because players call more liberally. Add +1 BB for each limper. The goal is to build a pot with your good hands while giving bad odds to speculative hands.'
+            },
+            {
+                category: 'betting',
+                question: 'What does "3-bet" mean?',
+                options: ['Betting 3x the pot', 'The third bet in a sequence (a re-raise)', 'Betting three times in a row', 'A bet of exactly $3'],
+                correct: 1,
+                explanation: 'A 3-bet is the THIRD bet in sequence: 1) Blinds (forced bet), 2) Open raise, 3) Re-raise (3-bet). It does NOT mean 3x the pot. A 4-bet would be raising the 3-bet, and so on. Standard 3-bet sizing is 3x the open when in position.'
+            },
+            {
+                category: 'betting',
+                question: 'You have a flush draw on the flop (9 outs). What are your approximate odds of hitting by the river?',
+                options: ['About 20%', 'About 35%', 'About 50%', 'About 65%'],
+                correct: 1,
+                explanation: 'With 9 outs and two cards to come, you\'ll hit about 35% of the time. Use the "Rule of 4": multiply outs by 4 on the flop (9×4=36%). On the turn with one card to come, use "Rule of 2" (9×2=18%).'
+            },
+            {
+                category: 'betting',
+                question: 'What is an "overbet"?',
+                options: ['Betting more than you can afford', 'A bet larger than the current pot', 'Betting out of turn', 'Raising someone\'s bet'],
+                correct: 1,
+                explanation: 'An overbet is a bet LARGER than the pot size. For example, betting $150 into a $100 pot. Overbets are typically polarized (very strong hands or bluffs) and are used to maximize value with monsters or apply maximum pressure as a bluff.'
+            },
+            {
+                category: 'betting',
+                question: 'The pot is $100 and your opponent bets $50. What pot odds are you getting to call?',
+                options: ['2:1', '3:1', '4:1', '1:1'],
+                correct: 1,
+                explanation: 'You need to call $50 to win a pot of $150 (original $100 + their $50). That\'s $150:$50 = 3:1, or 25%. You need at least 25% equity to profitably call. Calculate: Call amount / (Pot + Call) = 50/150 = 33%.'
+            },
+            // Live Poker Questions
+            {
+                category: 'live',
+                question: 'In live poker, what does "one chip rule" mean?',
+                options: ['You can only bet one chip at a time', 'A single chip thrown in is usually a call', 'Each player gets one chip to protect cards', 'You must have at least one chip to play'],
+                correct: 1,
+                explanation: 'If you throw in a single chip without announcing "raise," it\'s typically considered a call regardless of the chip denomination. Always verbally announce "raise" first if that\'s your intention. Say "raise to $X" to be clear.'
+            },
+            {
+                category: 'live',
+                question: 'What is a "string bet" and why is it not allowed?',
+                options: ['Betting with string-tied chips', 'Putting chips in multiple motions without announcing', 'Betting on multiple hands at once', 'A bet made with poker chips tied together'],
+                correct: 1,
+                explanation: 'A string bet is putting chips in multiple motions (e.g., putting some in, going back, adding more) without first announcing your total bet. It\'s banned because it can be used to gauge reactions. Always announce your bet OR put all chips in at once.'
+            },
+            {
+                category: 'live',
+                question: 'How should you typically adjust against loose-passive live players who call too much?',
+                options: ['Bluff more often', 'Value bet thinner and bluff less', 'Play very tight', 'Always go all-in'],
+                correct: 1,
+                explanation: 'Against calling stations, bluff LESS and value bet MORE. They\'ll call you down with weak pairs, so get maximum value from your good hands. Don\'t try to bluff them off hands - they\'ll call anyway!'
+            },
+            {
+                category: 'live',
+                question: 'What is considered proper etiquette when you win a pot?',
+                options: ['Celebrate loudly', 'Show your bluff to tilt them', 'Collect chips quietly and tip the dealer', 'Leave the table immediately'],
+                correct: 2,
+                explanation: 'Be gracious in victory. Collect your chips, tip the dealer $1-2 (customary), and move on to the next hand. Don\'t slowroll, don\'t gloat, and don\'t berate other players\' decisions. Good etiquette keeps the game friendly and recreational players happy.'
+            },
+            {
+                category: 'live',
+                question: 'Your opponent\'s hands are visibly shaking as they make a large bet. This usually indicates:',
+                options: ['They are bluffing and nervous', 'They have a very strong hand (adrenaline)', 'They need coffee', 'They are cold'],
+                correct: 1,
+                explanation: 'Shaking hands typically indicate a strong hand, not a bluff! It\'s caused by an adrenaline rush from excitement. Nervous bluffers usually try to act calm and still. Remember: "strong means weak, weak means strong" is a common tell pattern, but shaking hands is usually genuine strength.'
+            }
+        ];
+
+        let currentQuestion = 0;
+        let correctCount = 0;
+        let wrongCount = 0;
+        let currentCategory = 'all';
+        let filteredQuestions = [...quizQuestions];
+        let answeredQuestions = new Set();
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function setCategory(category) {
+            currentCategory = category;
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            if (category === 'all') {
+                filteredQuestions = [...quizQuestions];
+            } else {
+                filteredQuestions = quizQuestions.filter(q => q.category === category);
+            }
+
+            shuffleArray(filteredQuestions);
+            answeredQuestions.clear();
+            currentQuestion = 0;
+            correctCount = 0;
+            wrongCount = 0;
+            updateStats();
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            if (filteredQuestions.length === 0) {
+                document.getElementById('quiz-question').textContent = 'No questions in this category.';
+                document.getElementById('quiz-options').innerHTML = '';
+                return;
+            }
+
+            // Find next unanswered question or cycle
+            let attempts = 0;
+            while (answeredQuestions.has(currentQuestion) && attempts < filteredQuestions.length) {
+                currentQuestion = (currentQuestion + 1) % filteredQuestions.length;
+                attempts++;
+            }
+
+            const q = filteredQuestions[currentQuestion];
+            const categoryNames = {
+                positions: 'Position Strategy',
+                hands: 'Hand Rankings',
+                strategy: 'Game Strategy',
+                betting: 'Betting & Odds',
+                live: 'Live Poker'
+            };
+
+            document.getElementById('quiz-category').textContent = categoryNames[q.category] || q.category;
+            document.getElementById('quiz-question').textContent = q.question;
+            document.getElementById('quiz-progress').textContent = answeredQuestions.size + 1;
+
+            const optionsContainer = document.getElementById('quiz-options');
+            optionsContainer.innerHTML = '';
+
+            q.options.forEach((option, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-option';
+                btn.textContent = option;
+                btn.onclick = () => selectAnswer(index);
+                optionsContainer.appendChild(btn);
+            });
+
+            document.getElementById('quiz-feedback').className = 'quiz-feedback';
+            document.getElementById('quiz-feedback').innerHTML = '';
+            document.getElementById('next-btn').style.display = 'none';
+        }
+
+        function selectAnswer(selectedIndex) {
+            const q = filteredQuestions[currentQuestion];
+            const options = document.querySelectorAll('.quiz-option');
+            const feedback = document.getElementById('quiz-feedback');
+
+            // Disable all options
+            options.forEach(opt => opt.classList.add('disabled'));
+
+            // Mark selected and correct answers
+            options[selectedIndex].classList.add('selected');
+
+            const isCorrect = selectedIndex === q.correct;
+
+            if (isCorrect) {
+                options[selectedIndex].classList.add('correct');
+                correctCount++;
+                feedback.className = 'quiz-feedback show correct';
+                feedback.innerHTML = `
+                    <div class="feedback-title">Correct!</div>
+                    <div class="feedback-text">${q.explanation}</div>
+                `;
+            } else {
+                options[selectedIndex].classList.add('incorrect');
+                options[q.correct].classList.add('show-correct');
+                wrongCount++;
+                feedback.className = 'quiz-feedback show incorrect';
+                feedback.innerHTML = `
+                    <div class="feedback-title">Incorrect</div>
+                    <div class="feedback-text"><strong>The correct answer is: ${q.options[q.correct]}</strong><br><br>${q.explanation}</div>
+                `;
+            }
+
+            answeredQuestions.add(currentQuestion);
+            updateStats();
+            document.getElementById('next-btn').style.display = 'inline-block';
+        }
+
+        function nextQuestion() {
+            currentQuestion = (currentQuestion + 1) % filteredQuestions.length;
+            loadQuestion();
+        }
+
+        function resetQuiz() {
+            answeredQuestions.clear();
+            currentQuestion = 0;
+            correctCount = 0;
+            wrongCount = 0;
+            shuffleArray(filteredQuestions);
+            updateStats();
+            loadQuestion();
+        }
+
+        function updateStats() {
+            const total = correctCount + wrongCount;
+            const score = total > 0 ? Math.round((correctCount / total) * 100) : 0;
+            document.getElementById('quiz-score').textContent = score + '%';
+            document.getElementById('quiz-correct').textContent = correctCount;
+            document.getElementById('quiz-wrong').textContent = wrongCount;
+        }
+
+        // Initialize quiz
+        shuffleArray(filteredQuestions);
+        loadQuestion();
     </script>
 </body>
 </html>
