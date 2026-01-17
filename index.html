@@ -59,6 +59,135 @@
             margin-bottom: 25px;
         }
 
+        .table-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .table-header h2 {
+            margin-bottom: 5px;
+        }
+
+        .table-subtitle {
+            color: rgba(255,255,255,0.5);
+            font-size: clamp(0.8rem, 2.5vw, 0.95rem);
+        }
+
+        /* Position Strategy Indicator */
+        .position-indicator {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-bottom: 25px;
+            padding: 0 10px;
+        }
+
+        .indicator-item {
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid;
+        }
+
+        .indicator-item.early {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: rgba(239, 68, 68, 0.3);
+        }
+
+        .indicator-item.middle {
+            background: rgba(251, 191, 36, 0.1);
+            border-color: rgba(251, 191, 36, 0.3);
+        }
+
+        .indicator-item.late {
+            background: rgba(34, 197, 94, 0.1);
+            border-color: rgba(34, 197, 94, 0.3);
+        }
+
+        .indicator-item.blinds {
+            background: rgba(139, 92, 246, 0.1);
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+
+        .indicator-label {
+            font-weight: bold;
+            font-size: clamp(0.7rem, 2vw, 0.85rem);
+            margin-bottom: 4px;
+            letter-spacing: 1px;
+        }
+
+        .indicator-item.early .indicator-label { color: #ef4444; }
+        .indicator-item.middle .indicator-label { color: #fbbf24; }
+        .indicator-item.late .indicator-label { color: #22c55e; }
+        .indicator-item.blinds .indicator-label { color: #a855f7; }
+
+        .indicator-positions {
+            font-size: clamp(0.75rem, 2vw, 0.85rem);
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 6px;
+        }
+
+        .indicator-strategy {
+            font-size: clamp(0.7rem, 1.8vw, 0.8rem);
+            color: #fff;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .indicator-range {
+            font-size: clamp(0.65rem, 1.6vw, 0.75rem);
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Position color coding on table */
+        .position.early-pos {
+            border-color: rgba(239, 68, 68, 0.6);
+        }
+
+        .position.early-pos:not(.selected)::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .position.middle-pos {
+            border-color: rgba(251, 191, 36, 0.6);
+        }
+
+        .position.middle-pos:not(.selected)::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid rgba(251, 191, 36, 0.3);
+        }
+
+        .position.late-pos {
+            border-color: rgba(34, 197, 94, 0.6);
+        }
+
+        .position.late-pos:not(.selected)::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .position.blinds-pos {
+            border-color: rgba(139, 92, 246, 0.6);
+        }
+
+        .position.blinds-pos:not(.selected)::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid rgba(139, 92, 246, 0.3);
+        }
+
         .table-container {
             display: flex;
             justify-content: center;
@@ -563,6 +692,14 @@
                 border-width: 2px;
             }
 
+            .position.early-pos:not(.selected)::after,
+            .position.middle-pos:not(.selected)::after,
+            .position.late-pos:not(.selected)::after,
+            .position.blinds-pos:not(.selected)::after {
+                inset: -3px;
+                border-width: 1px;
+            }
+
             .table-felt {
                 top: 10px;
                 left: 10px;
@@ -592,6 +729,20 @@
 
             .quick-ref-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .position-indicator {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+                padding: 0;
+            }
+
+            .indicator-item {
+                padding: 10px 8px;
+            }
+
+            .indicator-strategy {
+                font-size: 0.7rem;
             }
         }
 
@@ -682,45 +833,77 @@
         <!-- Positions & Ranges Tab -->
         <div id="positions" class="tab-content active">
             <div class="table-section">
-                <h2 style="text-align: center; margin-bottom: 20px;">Click a Position to See Opening Ranges</h2>
+                <div class="table-header">
+                    <h2>Click a Position to See Opening Ranges</h2>
+                    <p class="table-subtitle">Positions closer to the button can open wider ranges</p>
+                </div>
+
+                <!-- Position Strategy Indicator -->
+                <div class="position-indicator">
+                    <div class="indicator-item early">
+                        <div class="indicator-label">EARLY</div>
+                        <div class="indicator-positions">UTG, UTG+1, MP</div>
+                        <div class="indicator-strategy">Play TIGHT - Premium hands only</div>
+                        <div class="indicator-range">~10-15% of hands</div>
+                    </div>
+                    <div class="indicator-item middle">
+                        <div class="indicator-label">MIDDLE</div>
+                        <div class="indicator-positions">MP+1, HJ</div>
+                        <div class="indicator-strategy">Open up SLIGHTLY</div>
+                        <div class="indicator-range">~18-22% of hands</div>
+                    </div>
+                    <div class="indicator-item late">
+                        <div class="indicator-label">LATE</div>
+                        <div class="indicator-positions">CO, BTN</div>
+                        <div class="indicator-strategy">Open WIDE - Steal blinds</div>
+                        <div class="indicator-range">~30-50% of hands</div>
+                    </div>
+                    <div class="indicator-item blinds">
+                        <div class="indicator-label">BLINDS</div>
+                        <div class="indicator-positions">SB, BB</div>
+                        <div class="indicator-strategy">Defend vs steals / 3-bet or fold</div>
+                        <div class="indicator-range">Position dependent</div>
+                    </div>
+                </div>
+
                 <div class="table-container">
                     <div class="poker-table">
                         <div class="table-felt"></div>
                         <div class="dealer-button">DEALER</div>
 
-                        <div class="position pos-btn" onclick="selectPosition('btn')" id="pos-btn">
+                        <div class="position pos-btn late-pos" onclick="selectPosition('btn')" id="pos-btn">
                             <span class="position-name">BTN</span>
                             <span class="position-full">Button</span>
                         </div>
-                        <div class="position pos-sb" onclick="selectPosition('sb')" id="pos-sb">
+                        <div class="position pos-sb blinds-pos" onclick="selectPosition('sb')" id="pos-sb">
                             <span class="position-name">SB</span>
                             <span class="position-full">Small Blind</span>
                         </div>
-                        <div class="position pos-bb" onclick="selectPosition('bb')" id="pos-bb">
+                        <div class="position pos-bb blinds-pos" onclick="selectPosition('bb')" id="pos-bb">
                             <span class="position-name">BB</span>
                             <span class="position-full">Big Blind</span>
                         </div>
-                        <div class="position pos-utg" onclick="selectPosition('utg')" id="pos-utg">
+                        <div class="position pos-utg early-pos" onclick="selectPosition('utg')" id="pos-utg">
                             <span class="position-name">UTG</span>
                             <span class="position-full">Under Gun</span>
                         </div>
-                        <div class="position pos-utg1" onclick="selectPosition('utg1')" id="pos-utg1">
+                        <div class="position pos-utg1 early-pos" onclick="selectPosition('utg1')" id="pos-utg1">
                             <span class="position-name">UTG+1</span>
                             <span class="position-full">UTG+1</span>
                         </div>
-                        <div class="position pos-mp" onclick="selectPosition('mp')" id="pos-mp">
+                        <div class="position pos-mp early-pos" onclick="selectPosition('mp')" id="pos-mp">
                             <span class="position-name">MP</span>
                             <span class="position-full">Middle</span>
                         </div>
-                        <div class="position pos-mp1" onclick="selectPosition('mp1')" id="pos-mp1">
+                        <div class="position pos-mp1 middle-pos" onclick="selectPosition('mp1')" id="pos-mp1">
                             <span class="position-name">MP+1</span>
                             <span class="position-full">Middle+1</span>
                         </div>
-                        <div class="position pos-hj" onclick="selectPosition('hj')" id="pos-hj">
+                        <div class="position pos-hj middle-pos" onclick="selectPosition('hj')" id="pos-hj">
                             <span class="position-name">HJ</span>
                             <span class="position-full">Hijack</span>
                         </div>
-                        <div class="position pos-co" onclick="selectPosition('co')" id="pos-co">
+                        <div class="position pos-co late-pos" onclick="selectPosition('co')" id="pos-co">
                             <span class="position-name">CO</span>
                             <span class="position-full">Cutoff</span>
                         </div>
