@@ -1383,14 +1383,14 @@
         </div>
 
         <div class="tabs">
-            <button class="tab-btn active" onclick="showTab('positions')">Table Positions & Ranges</button>
-            <button class="tab-btn" onclick="showTab('beginner')">Beginner Guide</button>
-            <button class="tab-btn" onclick="showTab('strategy')">Strategy Tips</button>
-            <button class="tab-btn" onclick="showTab('rankings')">Hand Rankings</button>
-            <button class="tab-btn" onclick="showTab('glossary')">Glossary</button>
-            <button class="tab-btn" onclick="showTab('live')">Live Poker Tips</button>
-            <button class="tab-btn quiz-tab" onclick="showTab('quiz')">Quiz</button>
-            <button class="tab-btn trainer-tab" onclick="showTab('trainer')">Range Trainer</button>
+            <button class="tab-btn active" onclick="showTab('positions', this)">Table Positions & Ranges</button>
+            <button class="tab-btn" onclick="showTab('beginner', this)">Beginner Guide</button>
+            <button class="tab-btn" onclick="showTab('strategy', this)">Strategy Tips</button>
+            <button class="tab-btn" onclick="showTab('rankings', this)">Hand Rankings</button>
+            <button class="tab-btn" onclick="showTab('glossary', this)">Glossary</button>
+            <button class="tab-btn" onclick="showTab('live', this)">Live Poker Tips</button>
+            <button class="tab-btn quiz-tab" onclick="showTab('quiz', this)">Quiz</button>
+            <button class="tab-btn trainer-tab" onclick="showTab('trainer', this)">Range Trainer</button>
         </div>
 
         <!-- Positions & Ranges Tab -->
@@ -2439,11 +2439,11 @@
             updateRangeDisplay(position);
         }
 
-        function showTab(tabId) {
+        function showTab(tabId, btn) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
-            event.target.classList.add('active');
+            btn.classList.add('active');
         }
 
         // Initialize
