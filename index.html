@@ -924,6 +924,329 @@
             background: rgba(34, 197, 94, 0.3) !important;
         }
 
+        .trainer-tab {
+            background: linear-gradient(145deg, rgba(251, 191, 36, 0.2), rgba(251, 191, 36, 0.1)) !important;
+            border-color: rgba(251, 191, 36, 0.4) !important;
+        }
+
+        .trainer-tab:hover {
+            background: rgba(251, 191, 36, 0.3) !important;
+        }
+
+        /* Range Trainer Section */
+        .trainer-section {
+            background: rgba(139, 92, 246, 0.05);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 16px;
+            padding: 20px;
+        }
+
+        .trainer-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .trainer-subtitle {
+            color: rgba(255,255,255,0.5);
+            font-size: clamp(0.8rem, 2.5vw, 0.95rem);
+            margin-top: 5px;
+        }
+
+        .trainer-stats {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .trainer-container {
+            background: rgba(0,0,0,0.3);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            text-align: center;
+        }
+
+        .trainer-position {
+            margin-bottom: 25px;
+        }
+
+        .position-badge {
+            display: inline-block;
+            background: linear-gradient(145deg, #7c3aed, #5b21b6);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 10px;
+        }
+
+        .position-type {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        .position-type.early { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+        .position-type.middle { background: rgba(251, 191, 36, 0.2); color: #fbbf24; }
+        .position-type.late { background: rgba(34, 197, 94, 0.2); color: #22c55e; }
+        .position-type.blinds { background: rgba(139, 92, 246, 0.2); color: #a855f7; }
+
+        .trainer-hand {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .trainer-card {
+            width: clamp(70px, 18vw, 100px);
+            height: clamp(100px, 25vw, 140px);
+            background: linear-gradient(145deg, #fff, #f0f0f0);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .card-rank {
+            font-size: clamp(2rem, 6vw, 3rem);
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .card-suit {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            line-height: 1;
+        }
+
+        .card-suit.hearts, .card-suit.diamonds { color: #dc2626; }
+        .card-suit.spades, .card-suit.clubs { color: #1e1e2e; }
+
+        .trainer-hand-name {
+            color: rgba(255,255,255,0.7);
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+
+        .trainer-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px 30px;
+            border-radius: 12px;
+            border: 2px solid;
+            cursor: pointer;
+            transition: all 0.2s;
+            min-width: 100px;
+        }
+
+        .action-btn.fold {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: rgba(239, 68, 68, 0.4);
+            color: #ef4444;
+        }
+
+        .action-btn.fold:hover {
+            background: rgba(239, 68, 68, 0.2);
+            border-color: #ef4444;
+        }
+
+        .action-btn.call {
+            background: rgba(251, 191, 36, 0.1);
+            border-color: rgba(251, 191, 36, 0.4);
+            color: #fbbf24;
+        }
+
+        .action-btn.call:hover {
+            background: rgba(251, 191, 36, 0.2);
+            border-color: #fbbf24;
+        }
+
+        .action-btn.raise {
+            background: rgba(34, 197, 94, 0.1);
+            border-color: rgba(34, 197, 94, 0.4);
+            color: #22c55e;
+        }
+
+        .action-btn.raise:hover {
+            background: rgba(34, 197, 94, 0.2);
+            border-color: #22c55e;
+        }
+
+        .action-btn.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .action-btn.correct {
+            background: rgba(34, 197, 94, 0.3) !important;
+            border-color: #22c55e !important;
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+        }
+
+        .action-btn.incorrect {
+            background: rgba(239, 68, 68, 0.3) !important;
+            border-color: #ef4444 !important;
+        }
+
+        .action-btn.show-correct {
+            border-color: #22c55e !important;
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
+        }
+
+        .action-icon {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .action-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .trainer-feedback {
+            display: none;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .trainer-feedback.show {
+            display: block;
+        }
+
+        .trainer-feedback.correct {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .trainer-feedback.incorrect {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .trainer-controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .trainer-settings {
+            background: rgba(0,0,0,0.2);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .trainer-settings h3 {
+            color: #a855f7;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .position-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        /* Probability Section */
+        .probability-section {
+            background: rgba(0,0,0,0.2);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .probability-section h3 {
+            color: #a855f7;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .prob-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+            gap: 15px;
+        }
+
+        .prob-card {
+            background: rgba(139, 92, 246, 0.05);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .prob-card h4 {
+            color: #c084fc;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
+        .prob-table {
+            width: 100%;
+            font-size: clamp(0.75rem, 2vw, 0.85rem);
+        }
+
+        .prob-table tr {
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+        }
+
+        .prob-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .prob-table td {
+            padding: 8px 4px;
+        }
+
+        .prob-table td:first-child {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .prob-table td:nth-child(2) {
+            color: #c084fc;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .prob-table td:nth-child(3) {
+            color: rgba(255,255,255,0.5);
+            text-align: right;
+            font-size: 0.8em;
+        }
+
+        .prob-rule {
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .prob-rule p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
         /* Mobile-specific adjustments */
         @media (max-width: 480px) {
             body {
@@ -1067,6 +1390,7 @@
             <button class="tab-btn" onclick="showTab('glossary')">Glossary</button>
             <button class="tab-btn" onclick="showTab('live')">Live Poker Tips</button>
             <button class="tab-btn quiz-tab" onclick="showTab('quiz')">Quiz</button>
+            <button class="tab-btn trainer-tab" onclick="showTab('trainer')">Range Trainer</button>
         </div>
 
         <!-- Positions & Ranges Tab -->
@@ -1814,6 +2138,174 @@
                 </div>
             </div>
         </div>
+
+        <!-- Range Trainer Tab -->
+        <div id="trainer" class="tab-content">
+            <div class="trainer-section">
+                <div class="trainer-header">
+                    <h2>Range Trainer</h2>
+                    <p class="trainer-subtitle">Practice your pre-flop decisions. Should you fold, call, or raise?</p>
+                </div>
+
+                <div class="trainer-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Accuracy</span>
+                        <span class="stat-value" id="trainer-accuracy">0%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Correct</span>
+                        <span class="stat-value correct" id="trainer-correct">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Wrong</span>
+                        <span class="stat-value wrong" id="trainer-wrong">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Streak</span>
+                        <span class="stat-value" id="trainer-streak">0</span>
+                    </div>
+                </div>
+
+                <div class="trainer-container">
+                    <div class="trainer-position" id="trainer-position">
+                        <span class="position-badge">BTN</span>
+                        <span class="position-type late">Late Position</span>
+                    </div>
+
+                    <div class="trainer-hand" id="trainer-hand">
+                        <div class="trainer-card" id="card-1">
+                            <span class="card-rank">A</span>
+                            <span class="card-suit hearts">♥</span>
+                        </div>
+                        <div class="trainer-card" id="card-2">
+                            <span class="card-rank">K</span>
+                            <span class="card-suit spades">♠</span>
+                        </div>
+                    </div>
+
+                    <div class="trainer-hand-name" id="trainer-hand-name">Ace-King suited</div>
+
+                    <div class="trainer-actions" id="trainer-actions">
+                        <button class="action-btn fold" onclick="trainerAnswer('fold')">
+                            <span class="action-icon">✗</span>
+                            <span class="action-text">Fold</span>
+                        </button>
+                        <button class="action-btn call" onclick="trainerAnswer('call')">
+                            <span class="action-icon">→</span>
+                            <span class="action-text">Call/Marginal</span>
+                        </button>
+                        <button class="action-btn raise" onclick="trainerAnswer('raise')">
+                            <span class="action-icon">↑</span>
+                            <span class="action-text">Raise</span>
+                        </button>
+                    </div>
+
+                    <div class="trainer-feedback" id="trainer-feedback"></div>
+
+                    <div class="trainer-controls">
+                        <button class="quiz-btn" id="trainer-next" onclick="nextTrainerHand()" style="display: none;">Next Hand</button>
+                        <button class="quiz-btn secondary" onclick="resetTrainer()">Reset</button>
+                    </div>
+                </div>
+
+                <div class="trainer-settings">
+                    <h3>Select Position to Practice</h3>
+                    <div class="position-filters">
+                        <button class="filter-btn active" onclick="setTrainerPosition('all')">All Positions</button>
+                        <button class="filter-btn" onclick="setTrainerPosition('utg')">UTG</button>
+                        <button class="filter-btn" onclick="setTrainerPosition('mp')">MP</button>
+                        <button class="filter-btn" onclick="setTrainerPosition('hj')">HJ</button>
+                        <button class="filter-btn" onclick="setTrainerPosition('co')">CO</button>
+                        <button class="filter-btn" onclick="setTrainerPosition('btn')">BTN</button>
+                        <button class="filter-btn" onclick="setTrainerPosition('sb')">SB</button>
+                        <button class="filter-btn" onclick="setTrainerPosition('bb')">BB</button>
+                    </div>
+                </div>
+
+                <!-- Probability Reference Section -->
+                <div class="probability-section">
+                    <h3>Probability Reference</h3>
+
+                    <div class="prob-grid">
+                        <div class="prob-card">
+                            <h4>Pre-Flop Hand Odds</h4>
+                            <table class="prob-table">
+                                <tr><td>Being dealt AA</td><td>0.45%</td><td>220:1</td></tr>
+                                <tr><td>Being dealt any pair</td><td>5.9%</td><td>16:1</td></tr>
+                                <tr><td>Being dealt AKs</td><td>0.3%</td><td>331:1</td></tr>
+                                <tr><td>Being dealt AK (any)</td><td>1.2%</td><td>82:1</td></tr>
+                                <tr><td>Being dealt suited cards</td><td>23.5%</td><td>3.3:1</td></tr>
+                                <tr><td>Being dealt connectors</td><td>15.7%</td><td>5.4:1</td></tr>
+                            </table>
+                        </div>
+
+                        <div class="prob-card">
+                            <h4>Flopping Hands</h4>
+                            <table class="prob-table">
+                                <tr><td>Flopping a set (with pair)</td><td>11.8%</td><td>7.5:1</td></tr>
+                                <tr><td>Flopping a flush (suited)</td><td>0.8%</td><td>118:1</td></tr>
+                                <tr><td>Flopping flush draw (suited)</td><td>10.9%</td><td>8.1:1</td></tr>
+                                <tr><td>Flopping a pair (unpaired)</td><td>32.4%</td><td>2.1:1</td></tr>
+                                <tr><td>Flopping two pair (unpaired)</td><td>2.0%</td><td>49:1</td></tr>
+                                <tr><td>Flopping OESD (connectors)</td><td>9.6%</td><td>9.4:1</td></tr>
+                            </table>
+                        </div>
+
+                        <div class="prob-card">
+                            <h4>Drawing Odds (Flop to River)</h4>
+                            <table class="prob-table">
+                                <tr><td>Flush draw (9 outs)</td><td>35%</td><td>1.9:1</td></tr>
+                                <tr><td>OESD (8 outs)</td><td>31.5%</td><td>2.2:1</td></tr>
+                                <tr><td>Gutshot (4 outs)</td><td>16.5%</td><td>5.1:1</td></tr>
+                                <tr><td>Two overcards (6 outs)</td><td>24.1%</td><td>3.1:1</td></tr>
+                                <tr><td>Set to full house (7 outs)</td><td>27.8%</td><td>2.6:1</td></tr>
+                                <tr><td>One pair to two pair/trips</td><td>8.4%</td><td>10.9:1</td></tr>
+                            </table>
+                        </div>
+
+                        <div class="prob-card">
+                            <h4>Drawing Odds (Turn to River)</h4>
+                            <table class="prob-table">
+                                <tr><td>Flush draw (9 outs)</td><td>19.6%</td><td>4.1:1</td></tr>
+                                <tr><td>OESD (8 outs)</td><td>17.4%</td><td>4.8:1</td></tr>
+                                <tr><td>Gutshot (4 outs)</td><td>8.7%</td><td>10.5:1</td></tr>
+                                <tr><td>Two overcards (6 outs)</td><td>13.0%</td><td>6.7:1</td></tr>
+                                <tr><td>Combo draw (15 outs)</td><td>32.6%</td><td>2.1:1</td></tr>
+                                <tr><td>Runner-runner flush</td><td>4.2%</td><td>23:1</td></tr>
+                            </table>
+                        </div>
+
+                        <div class="prob-card">
+                            <h4>Pre-Flop All-In Matchups</h4>
+                            <table class="prob-table">
+                                <tr><td>AA vs KK</td><td>81% vs 19%</td><td></td></tr>
+                                <tr><td>AA vs AKs</td><td>87% vs 13%</td><td></td></tr>
+                                <tr><td>Pair vs two overcards</td><td>52% vs 48%</td><td>Coin flip</td></tr>
+                                <tr><td>Pair vs one overcard</td><td>70% vs 30%</td><td></td></tr>
+                                <tr><td>Two overs vs two unders</td><td>63% vs 37%</td><td></td></tr>
+                                <tr><td>Dominated (AK vs AQ)</td><td>74% vs 26%</td><td></td></tr>
+                            </table>
+                        </div>
+
+                        <div class="prob-card">
+                            <h4>Rule of 2 and 4</h4>
+                            <div class="prob-rule">
+                                <p><strong>Flop → River:</strong> Outs × 4 = ~% to hit</p>
+                                <p><strong>Turn → River:</strong> Outs × 2 = ~% to hit</p>
+                            </div>
+                            <table class="prob-table">
+                                <tr><td>4 outs</td><td>~16% / ~8%</td><td>Gutshot</td></tr>
+                                <tr><td>6 outs</td><td>~24% / ~12%</td><td>Two overs</td></tr>
+                                <tr><td>8 outs</td><td>~32% / ~16%</td><td>OESD</td></tr>
+                                <tr><td>9 outs</td><td>~36% / ~18%</td><td>Flush draw</td></tr>
+                                <tr><td>12 outs</td><td>~48% / ~24%</td><td>Flush + gutshot</td></tr>
+                                <tr><td>15 outs</td><td>~60% / ~30%</td><td>Flush + OESD</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -2283,6 +2775,303 @@
         // Initialize quiz
         shuffleArray(filteredQuestions);
         loadQuestion();
+
+        // ==========================================
+        // Range Trainer System
+        // ==========================================
+
+        const ranks = ['A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2'];
+        const suits = [
+            { symbol: '♠', name: 'spades', color: 'black' },
+            { symbol: '♥', name: 'hearts', color: 'red' },
+            { symbol: '♦', name: 'diamonds', color: 'red' },
+            { symbol: '♣', name: 'clubs', color: 'black' }
+        ];
+
+        const trainerPositions = ['utg', 'utg1', 'mp', 'mp1', 'hj', 'co', 'btn', 'sb', 'bb'];
+        const positionNames = {
+            utg: 'UTG',
+            utg1: 'UTG+1',
+            mp: 'MP',
+            mp1: 'MP+1',
+            hj: 'HJ',
+            co: 'CO',
+            btn: 'BTN',
+            sb: 'SB',
+            bb: 'BB'
+        };
+        const positionTypes = {
+            utg: { type: 'Early Position', class: 'early' },
+            utg1: { type: 'Early Position', class: 'early' },
+            mp: { type: 'Middle Position', class: 'middle' },
+            mp1: { type: 'Middle Position', class: 'middle' },
+            hj: { type: 'Middle Position', class: 'middle' },
+            co: { type: 'Late Position', class: 'late' },
+            btn: { type: 'Late Position', class: 'late' },
+            sb: { type: 'Blinds', class: 'blind' },
+            bb: { type: 'Blinds', class: 'blind' }
+        };
+
+        let trainerStats = {
+            correct: 0,
+            wrong: 0,
+            streak: 0,
+            bestStreak: 0
+        };
+        let currentTrainerPosition = 'all';
+        let currentHand = null;
+        let currentPosition = null;
+
+        function generateRandomHand() {
+            // Generate two random cards
+            const deck = [];
+            for (let rank of ranks) {
+                for (let suit of suits) {
+                    deck.push({ rank, suit });
+                }
+            }
+
+            // Shuffle and pick two cards
+            const shuffled = deck.sort(() => Math.random() - 0.5);
+            const card1 = shuffled[0];
+            const card2 = shuffled[1];
+
+            return { card1, card2 };
+        }
+
+        function getHandNotation(card1, card2) {
+            const rank1Idx = ranks.indexOf(card1.rank);
+            const rank2Idx = ranks.indexOf(card2.rank);
+
+            // Order by rank (higher first)
+            let highCard, lowCard;
+            if (rank1Idx <= rank2Idx) {
+                highCard = card1;
+                lowCard = card2;
+            } else {
+                highCard = card2;
+                lowCard = card1;
+            }
+
+            const isSuited = highCard.suit.name === lowCard.suit.name;
+            const isPair = highCard.rank === lowCard.rank;
+
+            if (isPair) {
+                return highCard.rank + lowCard.rank;
+            } else if (isSuited) {
+                return highCard.rank + lowCard.rank + 's';
+            } else {
+                return highCard.rank + lowCard.rank + 'o';
+            }
+        }
+
+        function getHandName(card1, card2) {
+            const rankNames = {
+                'A': 'Ace', 'K': 'King', 'Q': 'Queen', 'J': 'Jack', 'T': 'Ten',
+                '9': 'Nine', '8': 'Eight', '7': 'Seven', '6': 'Six', '5': 'Five',
+                '4': 'Four', '3': 'Three', '2': 'Two'
+            };
+
+            const rank1Idx = ranks.indexOf(card1.rank);
+            const rank2Idx = ranks.indexOf(card2.rank);
+
+            let highCard, lowCard;
+            if (rank1Idx <= rank2Idx) {
+                highCard = card1;
+                lowCard = card2;
+            } else {
+                highCard = card2;
+                lowCard = card1;
+            }
+
+            const isSuited = highCard.suit.name === lowCard.suit.name;
+            const isPair = highCard.rank === lowCard.rank;
+
+            if (isPair) {
+                return `Pocket ${rankNames[highCard.rank]}s`;
+            } else if (isSuited) {
+                return `${rankNames[highCard.rank]}-${rankNames[lowCard.rank]} suited`;
+            } else {
+                return `${rankNames[highCard.rank]}-${rankNames[lowCard.rank]} offsuit`;
+            }
+        }
+
+        function getCorrectAction(handNotation, position) {
+            const ranges = positionRanges[position];
+
+            if (ranges.raise.includes(handNotation)) {
+                return 'raise';
+            } else if (ranges.call.includes(handNotation)) {
+                return 'call';
+            } else if (ranges.marginal.includes(handNotation)) {
+                return 'call'; // Marginal hands can be called
+            } else {
+                return 'fold';
+            }
+        }
+
+        function displayCard(cardElement, card) {
+            const rankEl = cardElement.querySelector('.card-rank');
+            const suitEl = cardElement.querySelector('.card-suit');
+
+            rankEl.textContent = card.rank;
+            suitEl.textContent = card.suit.symbol;
+            suitEl.className = 'card-suit ' + card.suit.name;
+        }
+
+        function loadTrainerHand() {
+            // Generate hand
+            currentHand = generateRandomHand();
+
+            // Pick position
+            if (currentTrainerPosition === 'all') {
+                currentPosition = trainerPositions[Math.floor(Math.random() * trainerPositions.length)];
+            } else {
+                currentPosition = currentTrainerPosition;
+            }
+
+            // Display cards
+            displayCard(document.getElementById('card-1'), currentHand.card1);
+            displayCard(document.getElementById('card-2'), currentHand.card2);
+
+            // Display position
+            const posEl = document.getElementById('trainer-position');
+            posEl.querySelector('.position-badge').textContent = positionNames[currentPosition];
+            const typeEl = posEl.querySelector('.position-type');
+            typeEl.textContent = positionTypes[currentPosition].type;
+            typeEl.className = 'position-type ' + positionTypes[currentPosition].class;
+
+            // Display hand name
+            document.getElementById('trainer-hand-name').textContent = getHandName(currentHand.card1, currentHand.card2);
+
+            // Reset UI
+            document.getElementById('trainer-feedback').innerHTML = '';
+            document.getElementById('trainer-feedback').className = 'trainer-feedback';
+            document.getElementById('trainer-next').style.display = 'none';
+            document.querySelectorAll('.action-btn').forEach(btn => {
+                btn.classList.remove('correct', 'incorrect', 'disabled');
+                btn.disabled = false;
+            });
+        }
+
+        function trainerAnswer(answer) {
+            const handNotation = getHandNotation(currentHand.card1, currentHand.card2);
+            const correctAction = getCorrectAction(handNotation, currentPosition);
+
+            const buttons = document.querySelectorAll('.action-btn');
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('disabled');
+            });
+
+            const feedback = document.getElementById('trainer-feedback');
+            const isCorrect = answer === correctAction || (answer === 'call' && (correctAction === 'call'));
+
+            // Also accept 'call' for marginal hands
+            const ranges = positionRanges[currentPosition];
+            const isMarginal = ranges.marginal.includes(handNotation);
+            const isInCallRange = ranges.call.includes(handNotation);
+
+            let actuallyCorrect = isCorrect;
+            if (answer === 'call' && isMarginal) {
+                actuallyCorrect = true;
+            }
+            if (answer === 'fold' && isMarginal) {
+                // Folding marginal is also acceptable
+                actuallyCorrect = true;
+            }
+
+            // Highlight buttons
+            const answerBtn = document.querySelector(`.action-btn.${answer}`);
+
+            if (actuallyCorrect) {
+                answerBtn.classList.add('correct');
+                trainerStats.correct++;
+                trainerStats.streak++;
+                if (trainerStats.streak > trainerStats.bestStreak) {
+                    trainerStats.bestStreak = trainerStats.streak;
+                }
+
+                let feedbackText = `<strong>Correct!</strong> ${handNotation} from ${positionNames[currentPosition]} is a `;
+                if (ranges.raise.includes(handNotation)) {
+                    feedbackText += '<span style="color: #22c55e;">RAISE</span>';
+                } else if (isInCallRange) {
+                    feedbackText += '<span style="color: #fbbf24;">CALL</span>';
+                } else if (isMarginal) {
+                    feedbackText += '<span style="color: #f97316;">MARGINAL</span> (fold or call depending on table dynamics)';
+                } else {
+                    feedbackText += '<span style="color: #ef4444;">FOLD</span>';
+                }
+
+                feedback.innerHTML = feedbackText;
+                feedback.className = 'trainer-feedback show correct';
+            } else {
+                answerBtn.classList.add('incorrect');
+                trainerStats.wrong++;
+                trainerStats.streak = 0;
+
+                // Show correct action
+                const correctBtn = document.querySelector(`.action-btn.${correctAction === 'call' ? 'call' : correctAction}`);
+                if (correctBtn && correctBtn !== answerBtn) {
+                    correctBtn.classList.add('correct');
+                }
+
+                let feedbackText = `<strong>Incorrect.</strong> ${handNotation} from ${positionNames[currentPosition]} should be a `;
+                if (ranges.raise.includes(handNotation)) {
+                    feedbackText += '<span style="color: #22c55e;">RAISE</span>';
+                } else if (isInCallRange) {
+                    feedbackText += '<span style="color: #fbbf24;">CALL</span>';
+                } else if (isMarginal) {
+                    feedbackText += '<span style="color: #f97316;">MARGINAL</span>';
+                } else {
+                    feedbackText += '<span style="color: #ef4444;">FOLD</span>';
+                }
+
+                feedback.innerHTML = feedbackText;
+                feedback.className = 'trainer-feedback show incorrect';
+            }
+
+            updateTrainerStats();
+            document.getElementById('trainer-next').style.display = 'inline-block';
+        }
+
+        function updateTrainerStats() {
+            const total = trainerStats.correct + trainerStats.wrong;
+            const accuracy = total > 0 ? Math.round((trainerStats.correct / total) * 100) : 0;
+
+            document.getElementById('trainer-accuracy').textContent = accuracy + '%';
+            document.getElementById('trainer-correct').textContent = trainerStats.correct;
+            document.getElementById('trainer-wrong').textContent = trainerStats.wrong;
+            document.getElementById('trainer-streak').textContent = trainerStats.streak;
+        }
+
+        function nextTrainerHand() {
+            loadTrainerHand();
+        }
+
+        function resetTrainer() {
+            trainerStats = { correct: 0, wrong: 0, streak: 0, bestStreak: 0 };
+            updateTrainerStats();
+            loadTrainerHand();
+        }
+
+        function setTrainerPosition(position) {
+            currentTrainerPosition = position;
+
+            // Update button states
+            document.querySelectorAll('.trainer-settings .filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Reset and load new hand
+            trainerStats = { correct: 0, wrong: 0, streak: 0, bestStreak: 0 };
+            updateTrainerStats();
+            loadTrainerHand();
+        }
+
+        // Initialize trainer on page load
+        loadTrainerHand();
     </script>
 </body>
 </html>
