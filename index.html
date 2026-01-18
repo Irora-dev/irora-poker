@@ -1020,6 +1020,9 @@
             line-height: 1;
         }
 
+        .card-rank.hearts, .card-rank.diamonds { color: #dc2626; }
+        .card-rank.spades, .card-rank.clubs { color: #1e1e2e; }
+
         .card-suit {
             font-size: clamp(1.5rem, 4vw, 2rem);
             line-height: 1;
@@ -2939,6 +2942,7 @@
             const suitEl = cardElement.querySelector('.card-suit');
 
             rankEl.textContent = card.rank;
+            rankEl.className = 'card-rank ' + card.suit.name;
             suitEl.textContent = card.suit.symbol;
             suitEl.className = 'card-suit ' + card.suit.name;
         }
