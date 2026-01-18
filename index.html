@@ -2440,19 +2440,35 @@
         }
 
         function showTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            // Hide all tabs
+            var tabs = document.querySelectorAll('.tab-content');
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+            }
+            // Remove active from all buttons
+            var btns = document.querySelectorAll('.tab-btn');
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove('active');
+            }
+            // Show selected tab
             document.getElementById(tabId).classList.add('active');
-            document.querySelector('[data-tab="' + tabId + '"]').classList.add('active');
+            // Highlight selected button
+            var selectedBtn = document.querySelector('[data-tab="' + tabId + '"]');
+            if (selectedBtn) {
+                selectedBtn.classList.add('active');
+            }
         }
 
-        // Tab button event delegation
-        document.getElementById('tab-buttons').addEventListener('click', function(e) {
-            const btn = e.target.closest('.tab-btn');
-            if (btn && btn.dataset.tab) {
-                showTab(btn.dataset.tab);
-            }
-        });
+        // Attach click handlers to each tab button
+        var tabButtons = document.querySelectorAll('.tab-btn');
+        for (var i = 0; i < tabButtons.length; i++) {
+            tabButtons[i].addEventListener('click', function() {
+                var tabId = this.getAttribute('data-tab');
+                if (tabId) {
+                    showTab(tabId);
+                }
+            });
+        }
 
         // Initialize
         createRangeGrid();
