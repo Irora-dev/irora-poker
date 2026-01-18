@@ -2128,12 +2128,12 @@
                 <div class="quiz-categories">
                     <h3>Filter by Category</h3>
                     <div class="category-filters">
-                        <button class="filter-btn active" onclick="setCategory('all')">All Questions</button>
-                        <button class="filter-btn" onclick="setCategory('positions')">Positions</button>
-                        <button class="filter-btn" onclick="setCategory('hands')">Hand Rankings</button>
-                        <button class="filter-btn" onclick="setCategory('strategy')">Strategy</button>
-                        <button class="filter-btn" onclick="setCategory('betting')">Betting</button>
-                        <button class="filter-btn" onclick="setCategory('live')">Live Poker</button>
+                        <button class="filter-btn active" onclick="setCategory('all', this)">All Questions</button>
+                        <button class="filter-btn" onclick="setCategory('positions', this)">Positions</button>
+                        <button class="filter-btn" onclick="setCategory('hands', this)">Hand Rankings</button>
+                        <button class="filter-btn" onclick="setCategory('strategy', this)">Strategy</button>
+                        <button class="filter-btn" onclick="setCategory('betting', this)">Betting</button>
+                        <button class="filter-btn" onclick="setCategory('live', this)">Live Poker</button>
                     </div>
                 </div>
             </div>
@@ -2211,14 +2211,14 @@
                 <div class="trainer-settings">
                     <h3>Select Position to Practice</h3>
                     <div class="position-filters">
-                        <button class="filter-btn active" onclick="setTrainerPosition('all')">All Positions</button>
-                        <button class="filter-btn" onclick="setTrainerPosition('utg')">UTG</button>
-                        <button class="filter-btn" onclick="setTrainerPosition('mp')">MP</button>
-                        <button class="filter-btn" onclick="setTrainerPosition('hj')">HJ</button>
-                        <button class="filter-btn" onclick="setTrainerPosition('co')">CO</button>
-                        <button class="filter-btn" onclick="setTrainerPosition('btn')">BTN</button>
-                        <button class="filter-btn" onclick="setTrainerPosition('sb')">SB</button>
-                        <button class="filter-btn" onclick="setTrainerPosition('bb')">BB</button>
+                        <button class="filter-btn active" onclick="setTrainerPosition('all', this)">All Positions</button>
+                        <button class="filter-btn" onclick="setTrainerPosition('utg', this)">UTG</button>
+                        <button class="filter-btn" onclick="setTrainerPosition('mp', this)">MP</button>
+                        <button class="filter-btn" onclick="setTrainerPosition('hj', this)">HJ</button>
+                        <button class="filter-btn" onclick="setTrainerPosition('co', this)">CO</button>
+                        <button class="filter-btn" onclick="setTrainerPosition('btn', this)">BTN</button>
+                        <button class="filter-btn" onclick="setTrainerPosition('sb', this)">SB</button>
+                        <button class="filter-btn" onclick="setTrainerPosition('bb', this)">BB</button>
                     </div>
                 </div>
 
@@ -2673,10 +2673,10 @@
             return array;
         }
 
-        function setCategory(category) {
+        function setCategory(category, btn) {
             currentCategory = category;
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            document.querySelectorAll('.category-filters .filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
 
             if (category === 'all') {
                 filteredQuestions = [...quizQuestions];
@@ -3079,14 +3079,14 @@
             loadTrainerHand();
         }
 
-        function setTrainerPosition(position) {
+        function setTrainerPosition(position, btn) {
             currentTrainerPosition = position;
 
             // Update button states
-            document.querySelectorAll('.trainer-settings .filter-btn').forEach(btn => {
-                btn.classList.remove('active');
+            document.querySelectorAll('.trainer-settings .filter-btn').forEach(b => {
+                b.classList.remove('active');
             });
-            event.target.classList.add('active');
+            btn.classList.add('active');
 
             // Reset and load new hand
             trainerStats = { correct: 0, wrong: 0, streak: 0, bestStreak: 0 };
